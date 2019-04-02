@@ -1,3 +1,4 @@
+import Constants
 import datetime
 from datetime import timedelta
 import locale
@@ -26,6 +27,14 @@ print(dateStr2);
 str_now = now.strftime('%Y/%m/%d');
 print(str_now);
 
+
 #日付チェックの関数
-def checkDate():
-    now = datetime.datetime.now();
+def isExecDate():
+    dateStr = datetime.datetime.now().strftime('%Y%m%d');
+    if dateStr in Constants.NON_EXE_DATE:
+        return False;
+    else:
+        return True;
+
+
+print(isExecDate());
