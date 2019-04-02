@@ -25,3 +25,7 @@ print(dateStr2);
 #この書き方が手っ取り早そう
 str_now = now.strftime('%Y/%m/%d');
 print(str_now);
+
+#日付チェックの関数
+def checkDate():
+    now = datetime.datetime.now();
