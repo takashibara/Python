@@ -1,7 +1,6 @@
-import Constants
+from Samples import Constants
 import datetime
 from datetime import timedelta
-import locale
 
 #今の日付を取得
 now = datetime.datetime.now();
