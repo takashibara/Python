@@ -16,7 +16,7 @@ import copy
 ##################################################
 # 非稼働日情報をインポート
 ##################################################
-import NonExeDate
+import Python.NonExeDate as NonExeDate
 
 ##################################################
 # 日付文字列(YYYYMMDD)
@@ -96,7 +96,8 @@ def sendMail(sendToCcFrom, subject, textL, attachL, removeFlg):
 		if address != "":
 			addressTxt = addressTxt + address + ",";
 	# Ccアドレスをセット
-	msg["Cc"] = addressTxt;
+	if addressTxt != "":
+		msg["Cc"] = addressTxt;
 
 	# Fromアドレス
 	addressTxt = "";
@@ -165,7 +166,7 @@ def existFiles(fileList):
 			if os.path.exists(path):
 				return True;
 		# 全部ファイルなしならFasle
-		return False;
+	return False;
 
 ##################################################
 # 非稼働日チェックの関数
