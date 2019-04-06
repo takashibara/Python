@@ -145,13 +145,15 @@ def sendMail(sendToCcFrom, subject, textL, attachL, removeFlg):
 # ファイルのコピー
 ##################################################
 def copyFile(dir, srcName, copyName):
-	shutil.copyfile(dir + srcName, dir + copyName);
+	if os.path.exists(dir + srcName):
+		shutil.copyfile(dir + srcName, dir + copyName);
 
 ##################################################
 # ファイルの削除
 ##################################################
 def deleteFile(dir, srcName):
-	os.remove(dir + srcName);
+	if os.path.exists(dir + srcName):
+		os.remove(dir + srcName);
 
 ##################################################
 # 複数のファイルの存在チェック
